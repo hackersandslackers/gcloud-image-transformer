@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# misc
+HackersAndSlackers-909c5a9c740f.json
+.env
