@@ -9,7 +9,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='Hackers Authors Endpoint',
+    name='Optimize images living on a GCP-hosted CDN.',
     version='0.0.1',
     description='Pulls individual author details & social accounts.',
     long_description=long_description,
@@ -24,9 +24,9 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    keywords='Database SQLAlchemy Postgres',
+    keywords='Google Cloud GCP Image Optimization Endpoint Serverless Pillow Webp Compression Retina',
     packages=find_packages(),
-    install_requires=['Flask', 'SQLAlchemy', 'Psycopg2-Binary', 'SimpleJSON'],
+    install_requires=['Flask', 'Pillow', 'google-cloud-storage', 'Requests', 'webp-converter'],
     entry_points={
         'console_scripts': [
             'main',
