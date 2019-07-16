@@ -1,9 +1,9 @@
 """Endpoint for optimizing images."""
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, jsonify, make_response
 from images import optimize_images
 
 
-def main(request):
+def main():
     """Entry point."""
     response = jsonify(optimize_images())
     headers = {
@@ -11,3 +11,6 @@ def main(request):
         'Access-Control-Allow-Methods': 'GET, POST'
     }
     return make_response(response, 200, headers)
+
+
+main()

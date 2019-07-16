@@ -3,7 +3,7 @@ from PIL import Image
 from google.cloud import storage
 import requests
 from io import BytesIO
-from config import bucketName, localFolder, bucketFolder, bucketURL
+from config import bucketName, bucketURL
 
 storage_client = storage.Client()
 bucket = storage_client.get_bucket(bucketName)
@@ -11,7 +11,7 @@ bucket = storage_client.get_bucket(bucketName)
 
 def list_files():
     """List all files in GCP bucket."""
-    files = bucket.list_blobs(prefix='2019')
+    files = bucket.list_blobs()
     fileList = [file for file in files if '.' in file.name if '@2x' not in file.name]
     return fileList
 
