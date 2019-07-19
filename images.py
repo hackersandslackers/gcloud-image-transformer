@@ -11,7 +11,7 @@ bucket = storage_client.get_bucket(bucketName)
 
 def list_files():
     """List all files in GCP bucket."""
-    files = bucket.list_blobs()
+    files = bucket.list_blobs(prefix='lynx/lynx26')
     fileList = [file for file in files if '.' in file.name if '@2x' not in file.name]
     return fileList
 
@@ -52,6 +52,6 @@ def optimize_images():
     image_list = list_files()
     response = {
         'retina': create_retina_image(image_list),
-        'webp': create_webp_image(image_list)
+        # 'webp': create_webp_image(image_list)
     }
     return response
