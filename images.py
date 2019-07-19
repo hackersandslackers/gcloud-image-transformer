@@ -52,6 +52,6 @@ def optimize_images():
     image_list = list_files()
     response = {
         'retina': create_retina_image(image_list),
-        # 'webp': create_webp_image(image_list)
+        'webp': create_webp_image(image_list)
     }
     return response
