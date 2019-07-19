@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hackersandslackers-204807",
+  "private_key_id": "909c5a9c740f5bf5081d2b0917f9757d7341a802",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCsdGhp5VWp5L+3\nJjBaJJm3IziW0cMMbwjle+xh6dDMlAFKA9y3ISgWR+V/+4JqI1srcuscIOQflQj1\nEFvRW4/f34jlO18Et+qxIVFydzgZvgJc+XePqXl9ez9ucn5YW9vXWReka1tzX3Jv\ncrsWZ6QMsnA/HnjrpKzNKgUMA+FLSzbq517cCtfQDju6Xwuum+xJmts6DuAFwH1z\n9AtITO4d/3mvKAfoRXT6GQzw4XSgUYf02YWlJsr7FgBekFM+9Sbr1pja/9SDl1TI\nkMrqsC9rWolyR9FtBrBacB71kxrhSr/eb+7sjso7c79NnZdWhf/1GzlRDQnzd0vA\nz9QBFHnHAgMBAAECggEAEUcgZuupJ3pZktnqoj1kgSqwMrwVVJuTQpql1jF8z+JM\nNsQoStixkXnmjmn+aO/d5H6A+7J36Iof+Z2H9XO8+GsG5iCKpohepRx3coZrQnj8\n95+u0N/j4iSE+GXULroVToAIlFqFMQvxBSVzhQ0hLHx8Lna5GrLG9U8ubkO9QLPA\nSz3JJaADMJsKGQPCId4DfITMf7AUpML8BBlIs2+Kxyj+gQyH5eO3HQYSV53vvKAq\nQZMZZ9SHt1fU7vY6RxmFAEqFFXYuo8Y7ANCGDPIUbaIt0oIpKmkmYSoi+MyLDxcp\nJz+GDPN1OhEuzMCRNCJHPe5Moyn5Yxt5rZ2M1nVD8QKBgQDbB1PsDeGF6WykTAlh\nKEe8FzMrKopu7mpPkubQqWCuRynS7Edsg9kh3VRJZ8LDpaCQXQZ0rSMV3ycfhY4x\nHx4qyKxUC39PoKcy23IqAWI98AZKVjfiAg4VuX6hiJky5MlomG1MswWjR+1b0fZB\neyy8XSGxCbvhRn2HL/DgRUNTewKBgQDJkIbhAqxKUCAzEmeiWggveW5unll2mD91\nG7fP/18aEhs4a+RkFwGwvAfFa1JWbO6c6lmKCBSRenWc0gXn5sSoAc83KkvhXpOK\n/8ZTCFWcB5Y8lmjXnMlRoSg5jH98tCIy64ewybw4b84YFNN461qxJNHly2MSfOht\nHFMe7s9rJQKBgQCDIDDy2iCQ7f0Xo1neK6I+jdkZV5+G5/8HYpgChdSWoY39c20T\nHyAn8Pxb8d2dCZRFuRt7UIf3uSAP9AH7kHib/oWEz1lJj5Fplg0T7r4k/ISXjmRo\nTvilsuaHyGKHIIcfslmFGIwgg5grZ1i5PQe8QTlBZuVu6aeO/nmDmpPC7wKBgFgR\nwQ0xmMwDhH4sLYHfarIrkZfdsmNCFH/7s227O/dtL92QLsOY1dE95vtYcCp5AC0p\nrCPGcg46focdsRzpVMW/vKVy4qK/KyJRrXr8KkO5gOhKI9cJl2EGVEgI3m9DWan8\nBVa2XnoeR+N3vgqYcxDxcJDCNDCQyRFbjen3GEPNAoGAFf/8eVgs2dZ8OOw/6y2Q\nt6evwzwfG2UuXwBHtUTW3V71HpEYjEEe4W8lj3Ho4d4qdaCU0YgCO3ZGe7yFiQWu\nV2NLL3re2nJS6IuhIZaVRJ58JBl+l5qJLoYDFMrSk0p2N6ZHsxFAYJZBp1Lxk+/h\nXDCfOE4KWFjoQRvD9C7qIg4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "hackers-cdn-assets@hackersandslackers-204807.iam.gserviceaccount.com",
+  "client_id": "113466885100710233225",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hackers-cdn-assets%40hackersandslackers-204807.iam.gserviceaccount.com"
+}
