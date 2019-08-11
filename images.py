@@ -1,4 +1,5 @@
 """Optimize images in a Google Cloud storage bucket CDN."""
+from datetime import datetime
 from PIL import Image
 from google.cloud import storage
 import requests
@@ -11,7 +12,9 @@ bucket = storage_client.get_bucket(bucketName)
 
 def list_files():
     """List all files in GCP bucket."""
-    files = bucket.list_blobs(prefix='lynx/lynx26')
+    month = datetime.now().strftime('%m')
+    year = datetime.now().strftime('%Y')
+    files = bucket.list_blobs(prefix=f"{year}/{month}")
     fileList = [file for file in files if '.' in file.name if '@2x' not in file.name]
     return fileList
 
