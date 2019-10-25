@@ -18,15 +18,17 @@ setup(
     author='Todd Birchard',
     author_email='toddbirchard@gmail.com',
     classifiers=[
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
     keywords='Google Cloud GCP Image Optimization Endpoint Serverless Pillow Webp Compression Retina',
     packages=find_packages(),
-    install_requires=['Flask', 'Pillow', 'google-cloud-storage', 'Requests', 'webp-converter'],
+    install_requires=['Flask',
+                      'Pillow',
+                      'google-cloud-storage',
+                      'Requests',
+                      'webp-converter',
+                      'python-resize-image'],
     entry_points={
         'console_scripts': [
             'main',

@@ -103,7 +103,10 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# misc
+# Google cloud
 HackersAndSlackers-909c5a9c740f.json
 HackersAndSlackers-6955ae72b501.json
+gcloud.json
+
+# Environment variables
 .env

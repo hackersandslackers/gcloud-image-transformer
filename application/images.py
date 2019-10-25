@@ -12,7 +12,7 @@ bucket = storage_client.get_bucket(bucketName)
 
 def list_files():
     """List all files in GCP bucket."""
-    month = datetime.now().strftime('%m')
+    month = '10'
     year = datetime.now().strftime('%Y')
     files = bucket.list_blobs(prefix=f"{year}/{month}")
     fileList = [file for file in files if '.' in file.name if '@2x' not in file.name]
