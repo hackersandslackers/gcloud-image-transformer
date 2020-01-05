@@ -1,6 +1,11 @@
+"""Creates missing image formats in a Google Cloud CDN."""
+import sys
 import requests
 from io import BytesIO
 from PIL import Image
+from loguru import logger
+
+logger.add('logs/info_{time}.log', format="{time} {message}", level="INFO")
 
 
 class ImageTransformer:
@@ -19,14 +24,14 @@ class ImageTransformer:
             dot_position = image.name.rfind('.')
             retina_name = image.name[:dot_position] + '@2x' + image.name[dot_position:]
             existing_retina_file = requests.get(self.bucket_url + retina_name)
-            print(existing_retina_file.status_code, ' = ', self.bucket_url + retina_name)
+            logger.info(f"Checking if {image.name} needs retina.")
             if existing_retina_file.status_code != 200:
                 response = requests.get(self.bucket_url + image.name)
                 im = Image.open(BytesIO(response.content))
                 width, height = im.size
                 if width > 1000:
                     new_blob = self.bucket.copy_blob(image, self.bucket, retina_name)
-                    affected_images.append(f'Created retina image for {new_blob.name}')
+                    affected_images.append(new_blob.name)
         return affected_images
 
     def create_standard_def_image(self):
@@ -36,10 +41,10 @@ class ImageTransformer:
             if '@2x' in image.name:
                 standard_def_name = image.name.replace('@2x', '')
                 existing_file = requests.get(self.bucket_url + standard_def_name)
+                logger.info(f"Checking if {image.name} needs standard image.")
                 if existing_file.status_code != 200:
-                    print(f'Creating standard image for {image.name}')
                     new_blob = self.bucket.copy_blob(image, self.bucket, standard_def_name)
-                    affected_images.append(f'Created standard image for {new_blob.name}')
+                    affected_images.append(new_blob.name)
         return affected_images
 
     def create_webp_image(self):
@@ -49,8 +54,8 @@ class ImageTransformer:
             dot_position = image.name.rfind('.')
             compressed_name = image.name[:dot_position] + '.webp'
             existing_compressed_file = requests.get(self.bucket_url + compressed_name)
-            print(existing_compressed_file.status_code, ' = ', self.bucket_url + compressed_name)
+            logger.info(f"Checking if {image.name} needs webp.")
             if existing_compressed_file.status_code != 200:
                 new_blob = self.bucket.copy_blob(image, self.bucket, compressed_name)
-                affected_images.append(f'Created webp image for {new_blob.name}')
+                affected_images.append(new_blob.name)
         return affected_images

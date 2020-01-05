@@ -9,33 +9,34 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='Optimize images living on a GCP-hosted CDN.',
+    name='Google Cloud Storage Image Transformer',
     version='0.0.1',
-    description='Pulls individual author details & social accounts.',
+    description='Connects to a GCP-hosted image CDN and applies image transformations.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/hackersandslackers/gcloud-image-optimization',
+    url='https://github.com/hackersandslackers/gcloud_image_transformer',
     author='Todd Birchard',
     author_email='toddbirchard@gmail.com',
     classifiers=[
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    keywords='Google Cloud GCP Image Optimization Endpoint Serverless Pillow Webp Compression Retina',
+    keywords='Google Cloud GCP Image Optimize Pillow Webp Compression Retina',
     packages=find_packages(),
     install_requires=['Flask',
                       'Pillow',
                       'google-cloud-storage',
                       'Requests',
                       'webp-converter',
-                      'python-resize-image'],
+                      'python-resize-image',
+                      'Loguru'],
     entry_points={
         'console_scripts': [
             'run = main:__main__',
         ],
     },
     project_urls={
-        'Bug Reports': 'https://github.com/hackersandslackers/gcloud-image-optimization/issues',
-        'Source': 'https://github.com/hackersandslackers/gcloud-image-optimization/',
+        'Bug Reports': 'https://github.com/hackersandslackers/gcloud_image_transformer/issues',
+        'Source': 'https://github.com/hackersandslackers/gcloud_image_transformer/',
     },
 )

@@ -7,12 +7,12 @@ verify_ssl = true
 python-dotenv="*"
 
 [packages]
-Flask = "*"
 google-cloud-storage = "*"
 Pillow = "*"
 python-resize-image = "*"
 webp-converter = "*"
 Requests = "*"
+Loguru = "*"
 
 [requires]
 python_version = "3.7"

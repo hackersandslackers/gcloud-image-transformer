@@ -1,3 +1,4 @@
+"""Connect to remote GCP bucket with images."""
 from config import bucket_name
 from google.cloud import storage
 

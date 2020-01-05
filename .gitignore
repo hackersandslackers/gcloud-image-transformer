@@ -110,3 +110,5 @@ gcloud.json
 
 # Environment variables
 .env
+
+.idea
