@@ -31,7 +31,7 @@ setup(
                       'python-resize-image'],
     entry_points={
         'console_scripts': [
-            'main',
+            'run = main:__main__',
         ],
     },
     project_urls={

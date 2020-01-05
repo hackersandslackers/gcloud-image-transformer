@@ -3,7 +3,6 @@ from os import environ
 
 
 # Google Cloud Storage
-bucketURL = environ.get('GCP_BUCKET_URL')
-bucketName = environ.get('GCP_BUCKET_NAME')
-bucketFolder = environ.get('GCP_BUCKET_FOLDER_NAME')
-bucketURL = environ.get('GCP_BUCKET_URL')
+bucket_URL = environ.get('GCP_BUCKET_URL')
+bucket_name = environ.get('GCP_BUCKET_NAME')
+bucket_folder = environ.get('GCP_BUCKET_FOLDER_NAME')
