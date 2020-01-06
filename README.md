@@ -9,7 +9,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/hackersandslackers/gcloud_image_transformer.svg?style=flat-square&colorB=ebcb8b&colorA=4c566a&logo=Github)](https://github.com/hackersandslackers/gcloud_image_transformer/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/hackersandslackers/gcloud_image_transformer.svg?style=flat-square&colorA=4c566a&colorB=ebcb8b&logo=Github)](https://github.com/hackersandslackers/gcloud_image_transformer/network)
 
-Script to optimize image files being served from a live CDN. Walks through a bucket to create *retina* and *webp* variations of images where needed.
+Turn any Google Storage Bucket into a CDN for auto-optimized images. **GCP Image Transformer** ensures that any image added to a GCP bucket has retina, standard definition, webp, and other variants.
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ Installation is recommended with Pipenv:
 
 ```shell
 $ git clone https://github.com/hackersandslackers/gcloud_image_transformer.git
-$ cd gcloud_image_transformer
+$ cd gcloud-image-transformer
 $ pipenv shell
 $ pipenv update
 $ python3 main.py
@@ -27,7 +27,7 @@ Alternatively, try installing via `setup.py`:
 
 ```shell
 $ git clone https://github.com/hackersandslackers/gcloud_image_transformer.git
-$ cd gcloud_image_transformer
+$ cd gcloud-image-transformer
 $ python3 setup.py run
 ```
 
@@ -36,8 +36,3 @@ The following environment variables are required to run this script:
 * `GCP_BUCKET_URL`: Publically accesible URL of gcloud bucket.
 * `GCP_BUCKET_NAME`: Friendly name of bucket.
 * `GCP_BUCKET_FOLDER_NAME`: /path/to/images
-
-
------
-
-**Hackers and Slackers** tutorials are free of charge. If you found this tutorial helpful, a [small donation](https://www.buymeacoffee.com/hackersslackers) would be greatly appreciated to keep us in business. All proceeds go towards coffee, and all coffee goes towards more content.
