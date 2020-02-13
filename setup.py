@@ -1,4 +1,4 @@
-"""Setup."""
+"""Setup file."""
 from os import path
 from setuptools import setup, find_packages
 from io import open
@@ -32,7 +32,7 @@ setup(
                       'Loguru'],
     entry_points={
         'console_scripts': [
-            'run = main:__main__',
+            'run = main:main',
         ],
     },
     project_urls={

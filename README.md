@@ -33,6 +33,6 @@ $ python3 setup.py run
 
 The following environment variables are required to run this script:
 
-* `GCP_BUCKET_URL`: Publically accesible URL of gcloud bucket.
+* `GCP_BUCKET_URL`: Publicly accessible URL of gcloud bucket.
 * `GCP_BUCKET_NAME`: Friendly name of bucket.
 * `GCP_BUCKET_FOLDER_NAME`: /path/to/images

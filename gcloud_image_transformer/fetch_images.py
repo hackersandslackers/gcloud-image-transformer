@@ -2,7 +2,7 @@
 
 
 def fetch_standard_images(bucket, bucket_image_folder_prefixes):
-    """List all files in GCP bucket."""
+    """List all standard-res images in bucket."""
     images = []
     for prefix in bucket_image_folder_prefixes:
         files = bucket.list_blobs(prefix=prefix)
@@ -12,7 +12,7 @@ def fetch_standard_images(bucket, bucket_image_folder_prefixes):
 
 
 def fetch_retina_images(bucket, bucket_image_folder_prefixes):
-    """List all files in GCP bucket."""
+    """List all retina images in bucket."""
     images = []
     for prefix in bucket_image_folder_prefixes:
         files = bucket.list_blobs(prefix=prefix)

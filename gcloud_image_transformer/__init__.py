@@ -2,13 +2,16 @@
 from google.cloud import storage
 from config import bucket_name, bucket_URL, bucket_image_folder_prefixes
 from .fetch_images import fetch_standard_images, fetch_retina_images
-from .transformer import ImageTransformer
+from gcloud_image_transformer.transformers import (
+    RetinaImageTransformer,
+    StandardImageTransformer,
+    WebpImageTransformer
+)
 
 
 def main():
     """Entry point."""
-    image_transformer = initialize_remote_image_transformer()
-    new_standard_images, new_retina_images, new_webp_images = transform_images(image_transformer)
+    new_retina_images, new_standard_images, new_webp_images = initialize_transforms()
     response = {
         'retina': len(new_retina_images),
         'webp': len(new_webp_images),
@@ -17,23 +20,34 @@ def main():
     print(response)
 
 
-def initialize_remote_image_transformer():
-    """Create transformer object."""
+def initialize_transforms():
+    """Create transformer objects."""
     storage_client = storage.Client()
     bucket = storage_client.get_bucket(bucket_name)
+    retina_images, standard_images = fetch_remote_images(bucket)
+    retina_transformer, standard_transformer, webp_transformer = create_transformers(bucket, bucket_name, bucket_URL, retina_images, standard_images)
+    new_retina_images, new_standard_images, new_webp_images = transform_images(retina_transformer, standard_transformer, webp_transformer)
+    return new_retina_images, new_standard_images, new_webp_images
+
+
+def fetch_remote_images(bucket):
+    """Fetch all images from GCP bucket."""
     retina_images = fetch_retina_images(bucket, bucket_image_folder_prefixes)
     standard_images = fetch_standard_images(bucket, bucket_image_folder_prefixes)
-    image_transformer = ImageTransformer(bucket,
-                                         bucket_name,
-                                         bucket_URL,
-                                         retina_images,
-                                         standard_images)
-    return image_transformer
+    return retina_images, standard_images
 
 
-def transform_images(image_transformer):
+def create_transformers(bucket, bucket_name, bucket_URL, retina_images, standard_images):
     """Connect to GCP bucket and apply image transforms."""
-    new_standard_images = image_transformer.create_standard_def_image()
-    new_retina_images = image_transformer.create_retina_image()
-    new_webp_images = image_transformer.create_webp_image()
-    return new_standard_images, new_retina_images, new_webp_images
+    retina_transformer = RetinaImageTransformer(bucket, bucket_name, bucket_URL, standard_images)
+    standard_transformer = StandardImageTransformer(bucket, bucket_name, bucket_URL, retina_images)
+    webp_transformer = WebpImageTransformer(bucket, bucket_name, bucket_URL, retina_images)
+    return retina_transformer, standard_transformer, webp_transformer
+
+
+def transform_images(retina_transformer, standard_transformer, webp_transformer):
+    """Perform image transforms."""
+    new_retina_images = retina_transformer.transform()
+    new_standard_images = standard_transformer.transform()
+    new_webp_images = webp_transformer.transform()
+    return new_retina_images, new_standard_images, new_webp_images
