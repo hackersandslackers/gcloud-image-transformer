@@ -18,7 +18,6 @@ setup(
     author='Todd Birchard',
     author_email='toddbirchard@gmail.com',
     classifiers=[
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
     keywords='Google Cloud GCP Image Optimize Pillow Webp Compression Retina',

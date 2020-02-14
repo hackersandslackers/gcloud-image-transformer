@@ -13,7 +13,7 @@ Turn any Google Storage Bucket into a CDN for auto-optimized images. **GCP Image
 
 ## Getting Started
 
-Installation is recommended with Pipenv:
+Installation with Pipenv:
 
 ```shell
 $ git clone https://github.com/hackersandslackers/gcloud_image_transformer.git
@@ -21,6 +21,15 @@ $ cd gcloud-image-transformer
 $ pipenv shell
 $ pipenv update
 $ python3 main.py
+```
+
+Installation via [Poetry](https://python-poetry.org/):
+
+```shell
+$ git clone https://github.com/hackersandslackers/gcloud_image_transformer.git
+$ cd gcloud-image-transformer
+$ poetry install
+$ poetry run
 ```
 
 Alternatively, try installing via `setup.py`:
@@ -35,4 +44,5 @@ The following environment variables are required to run this script:
 
 * `GCP_BUCKET_URL`: Publicly accessible URL of gcloud bucket.
 * `GCP_BUCKET_NAME`: Friendly name of bucket.
-* `GCP_BUCKET_FOLDER_NAME`: /path/to/images
+* `GOOGLE_APPLICATION_CREDENTIALS`: /path/to/service_key.json
+* `GCP_BUCKET_FOLDER_NAME` _(optional)_: /path/to/images
