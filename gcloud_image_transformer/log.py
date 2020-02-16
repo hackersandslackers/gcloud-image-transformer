@@ -11,3 +11,4 @@ def log_progress(func):
 
     def wrapper(self, *args, **kwargs):
         logger.info(f'{self.num_images_created} images generated of {len(self.image_blobs)} total.')
+    return func
