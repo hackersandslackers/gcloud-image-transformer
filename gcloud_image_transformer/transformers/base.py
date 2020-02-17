@@ -14,6 +14,6 @@ class BaseImageTransformer:
     def fetch_image_via_http(self, url):
         """Determine if image exists via HTTP request."""
         image_request = requests.get(self.bucket_url + url)
-        if image_request.headers['Content-Type'] != 'text/html; charset=UTF-8':
+        if image_request.headers['Content-Type'] in ('application/octet-stream', 'image/jpeg'):
             return image_request.content
         return None

@@ -26,12 +26,11 @@ class RetinaImageTransformer(BaseImageTransformer):
             existing_image_file = self.fetch_image_via_http(new_image_name)
             if existing_image_file is None:
                 self.__create_retina_image(image_blob, new_image_name)
-            pass
 
     def __create_retina_image(self, image_blob, new_image_name):
         """Create retina versions of standard-res images."""
         original_image = self.fetch_image_via_http(image_blob.name)
-        im = Image.open(BytesIO(original_image.content))
+        im = Image.open(BytesIO(original_image))
         width, height = im.size
         if width > 1000:
             new_blob = self.bucket.copy_blob(image_blob, self.bucket, new_image_name)
