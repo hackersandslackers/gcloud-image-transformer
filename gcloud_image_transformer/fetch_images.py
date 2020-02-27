@@ -3,7 +3,7 @@ import sys
 from loguru import logger
 
 
-logger.add(sys.stdout, format="{time} {message}", level="INFO")
+logger.add(sys.stdout, format="{time} {message}", level="INFO", filter='fetch_images')
 
 
 def fetch(bucket, bucket_image_folder_prefixes):
