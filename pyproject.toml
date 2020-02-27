@@ -1,24 +1,26 @@
 [tool.poetry]
-name = "ghost_sql_sanitation"
+name = "gcloud-image-transformer"
 version = "1.0.0"
-description = "Sanitize Ghost Blog SQL data to ensure content quality."
+description = "Optimize images hosted on Google Cloud Storage."
 authors = ["Todd Birchard <toddbirchard@gmail.com>"]
 maintainers = ["Todd Birchard <toddbirchard@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/hackersandslackers/gcloud_image_transformer/"
-keywords = ["Ghost",
-            "Blog",
-            "SQL",
+keywords = ["Google Cloud",
+            "CDN",
+            "Pillow",
             "Automation",
-            "Content"]
+            "Images"]
 
 [tool.poetry.dependencies]
-Python = "^3.7"
-SQLAlchemy = "*"
-PyMySQL = "*"
-Flask = "*"
-Loguru = "*"
+python = "^3.7"
+pillow = "*"
+google-cloud-storage = "*"
+requests = "*"
+webp-converter = "*"
+python-resize-image = "*"
+loguru = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"

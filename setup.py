@@ -10,8 +10,8 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='Google Cloud Storage Image Transformer',
-    version='0.0.1',
-    description='Connects to a GCP-hosted image CDN and applies image transformations.',
+    version='1.0.0',
+    description='Optimize images hosted on Google Cloud Storage.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/hackersandslackers/gcloud_image_transformer',
@@ -19,6 +19,7 @@ setup(
     author_email='toddbirchard@gmail.com',
     classifiers=[
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
     ],
     keywords='Google Cloud GCP Image Optimize Pillow Webp Compression Retina',
     packages=find_packages(),
