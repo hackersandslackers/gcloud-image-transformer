@@ -14,7 +14,7 @@ keywords = ["Google Cloud",
             "Images"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 pillow = "*"
 google-cloud-storage = "*"
 requests = "*"
