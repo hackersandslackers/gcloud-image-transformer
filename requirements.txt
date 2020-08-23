@@ -10,7 +10,7 @@ googleapis-common-protos==1.52.0
 idna==2.9
 loguru==0.4.1
 Pillow==7.2.0
-protobuf==3.11.3
+protobuf==3.13.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 python-resize-image==1.1.19
