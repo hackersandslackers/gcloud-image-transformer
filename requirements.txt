@@ -18,7 +18,7 @@ pyasn1-modules==0.2.8
 pycparser==2.20
 python-resize-image==1.1.19
 pytz==2020.1
-requests==2.24.0
+requests==2.31.0
 rsa==4.6
 six==1.15.0
 urllib3==1.25.10
